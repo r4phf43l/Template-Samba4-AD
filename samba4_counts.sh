@@ -19,6 +19,10 @@ if [ "$1" == "getActiveWS" ]; then
     echo $(jq -r '.ACTIVE_WS' $OUT_STATUS)
 fi
 
+if [ "$1" == "getActiveUsers" ]; then
+    echo $(jq -r '.ACTIVE_USERS' $OUT_STATUS)
+fi
+
 if [ "$1" == "getTodayLogin" ]; then
     echo $(jq -r '.USERS_TODAY' $OUT_STATUS)
 fi
