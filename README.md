@@ -9,9 +9,9 @@ This is a fork from https://github.com/Galvy/Template-Samba4-AD and I agree when
 
 sudo apt-get install jq
 
-2) copy samba4_ad.conf in your zabbix-agent2.d etc folder
+2) copy samba4_ad.conf and samba4_count.conf in your zabbix-agent2.d etc folder
 
-Es: /etc/zabbix/zabbix_agentd2.d/samba4_ad.conf
+Ex: /etc/zabbix/zabbix_agentd2.d/samba4_ad.conf
 
 3) add zabbix user to sudo with visudo
 
@@ -25,5 +25,5 @@ zabbix ALL=NOPASSWD: ALL
 7) add cron tasks like:
 
 */15 * * * * /usr/local/bin/samba4_ad.sh doJson > /dev/null 2>&1
-
+*/15 * * * * /usr/local/bin/samba4_counts.sh doCount > /dev/null 2>&1
 0 */2 * * * /usr/local/bin/samba4_ad.sh doDbCheck > /dev/null 2>&1
